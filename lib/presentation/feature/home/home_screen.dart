@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pegadaian_training_job_portal/presentation/feature/home/widgets/custom_list.dart';
 import 'package:pegadaian_training_job_portal/presentation/feature/home/widgets/job_card.dart';
 import 'package:pegadaian_training_job_portal/theme.dart';
 
@@ -68,6 +69,25 @@ class HomeScreen extends StatelessWidget {
                       imageUrl: 'assets/images/card_category.png',
                     ),
                     SizedBox(width: 16),
+                    JobCard(
+                      text: 'Mobile Developer',
+                      imageUrl: 'assets/images/card_category2.png',
+                    ),
+                    SizedBox(width: 16),
+                    JobCard(
+                      text: 'App Designer',
+                      imageUrl: 'assets/images/card_category_three.png',
+                    ),
+                    SizedBox(width: 16),
+                    JobCard(
+                      text: 'Content Writer',
+                      imageUrl: 'assets/images/card_category_four.png',
+                    ),
+                    SizedBox(width: 16),
+                    JobCard(
+                      text: 'Video Grapher',
+                      imageUrl: 'assets/images/card_category_five.png',
+                    ),
                   ],
                 ),
               ),
@@ -84,40 +104,36 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
             Padding(
-              padding: EdgeInsets.only(left: 24),
-              child: Text(
-                'Just Posted',
-                style: GoogleFonts.poppins(
-                  color: Color(0xff272C2F),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+              padding: const EdgeInsets.only(top: 16, left: 24.0),
+              child: CustomList(
+                imageUrl: 'assets/images/google-icon.png',
+                jobTitle: 'Front-End Developer',
+                companyName: 'Google',
               ),
             ),
-            SizedBox(height: 30),
             Padding(
-              padding: EdgeInsets.only(left: 24),
-              child: Text(
-                'Just Posted',
-                style: GoogleFonts.poppins(
-                  color: Color(0xff272C2F),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+              padding: const EdgeInsets.only(top: 16, left: 24.0),
+              child: CustomList(
+                imageUrl: 'assets/images/instagram-icon.png',
+                jobTitle: 'UI Designer',
+                companyName: 'Instagram',
               ),
             ),
-            SizedBox(height: 30),
             Padding(
-              padding: EdgeInsets.only(left: 24),
-              child: Text(
-                'Just Posted',
-                style: GoogleFonts.poppins(
-                  color: Color(0xff272C2F),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+              padding: const EdgeInsets.only(top: 16, left: 24.0),
+              child: CustomList(
+                imageUrl: 'assets/images/facebook-icon.png',
+                jobTitle: 'Data Scientist',
+                companyName: 'Facebook',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16, left: 24.0),
+              child: CustomList(
+                imageUrl: 'assets/images/google-icon.png',
+                jobTitle: 'Data Scientist',
+                companyName: 'Facebook',
               ),
             ),
           ],
