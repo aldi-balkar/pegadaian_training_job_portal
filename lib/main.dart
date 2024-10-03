@@ -5,10 +5,12 @@ import 'package:pegadaian_training_job_portal/presentation/feature/login/bloc/lo
 import 'package:pegadaian_training_job_portal/presentation/feature/login/login_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Bloc Login',
         initialRoute: '/',
         routes: {
-          '/': (context) => LoginScreen(),
+          '/': (context) => const LoginScreen(),
           '/home': (context) => HomeScreen(),
         },
       ),
