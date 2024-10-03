@@ -11,12 +11,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Delay 3 detik sebelum pindah ke home screen
     Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-            builder: (context) =>
-                HomeScreen()), // Ganti dengan kelas home screen Anda
+        MaterialPageRoute(builder: (context) => HomeScreen()),
       );
     });
   }
@@ -39,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 50),
             Text(
-              'FUTURE JOBS',
+              'JOB PORTAL',
               style: splashTextStyle,
             ),
             Padding(
