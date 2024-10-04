@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart'; // Impor Flutter Material untuk UI widget
 import 'package:google_fonts/google_fonts.dart'; // Impor Google Fonts untuk custom font
 import 'package:pegadaian_training_job_portal/theme.dart'; // Impor custom theme untuk styling text dan widget
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});

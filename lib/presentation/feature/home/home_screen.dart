@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pegadaian_training_job_portal/presentation/feature/categori/detail_categorie.dart';
+import 'package:pegadaian_training_job_portal/presentation/feature/home/bloc/home_bloc.dart';
+import 'package:pegadaian_training_job_portal/presentation/feature/home/bloc/home_event.dart';
 import 'package:pegadaian_training_job_portal/presentation/feature/home/widgets/custom_list.dart';
 import 'package:pegadaian_training_job_portal/presentation/feature/home/widgets/job_card.dart';
 import 'package:pegadaian_training_job_portal/theme.dart';
@@ -64,29 +68,113 @@ class HomeScreen extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    JobCard(
-                      text: 'Website Developer',
-                      imageUrl: 'assets/images/card_category.png',
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 16.0), // Menambahkan padding di sisi kanan
+                      child: JobCard(
+                        text: 'Website Developer',
+                        imageUrl: 'assets/images/card_category.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailCategory(
+                                jobTitle: 'Website Developer',
+                                imageUrl: 'assets/images/card_category.png',
+                                companyName:
+                                    'Tech Solutions', // Menambahkan companyName
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                    SizedBox(width: 16),
-                    JobCard(
-                      text: 'Mobile Developer',
-                      imageUrl: 'assets/images/card_category2.png',
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 16.0), // Menambahkan padding di sisi kanan
+                      child: JobCard(
+                        text: 'Mobile Developer',
+                        imageUrl: 'assets/images/card_category2.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailCategory(
+                                jobTitle: 'Mobile Developer',
+                                imageUrl: 'assets/images/card_category2.png',
+                                companyName:
+                                    'Mobile Innovations', // Menambahkan companyName
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                    SizedBox(width: 16),
-                    JobCard(
-                      text: 'App Designer',
-                      imageUrl: 'assets/images/card_category_three.png',
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 16.0), // Menambahkan padding di sisi kanan
+                      child: JobCard(
+                        text: 'App Designer',
+                        imageUrl: 'assets/images/card_category_three.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailCategory(
+                                jobTitle: 'App Designer',
+                                imageUrl:
+                                    'assets/images/card_category_three.png',
+                                companyName:
+                                    'Creative Apps', // Menambahkan companyName
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                    SizedBox(width: 16),
-                    JobCard(
-                      text: 'Content Writer',
-                      imageUrl: 'assets/images/card_category_four.png',
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 16.0), // Menambahkan padding di sisi kanan
+                      child: JobCard(
+                        text: 'Content Writer',
+                        imageUrl: 'assets/images/card_category_four.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailCategory(
+                                jobTitle: 'Content Writer',
+                                imageUrl:
+                                    'assets/images/card_category_four.png',
+                                companyName:
+                                    'Content Creators Inc.', // Menambahkan companyName
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                    SizedBox(width: 16),
-                    JobCard(
-                      text: 'Video Grapher',
-                      imageUrl: 'assets/images/card_category_five.png',
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 16.0), // Menambahkan padding di sisi kanan
+                      child: JobCard(
+                        text: 'Video Grapher',
+                        imageUrl: 'assets/images/card_category_five.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailCategory(
+                                jobTitle: 'Video Grapher',
+                                imageUrl:
+                                    'assets/images/card_category_five.png',
+                                companyName:
+                                    'Media Productions', // Menambahkan companyName
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),
@@ -110,6 +198,7 @@ class HomeScreen extends StatelessWidget {
                 imageUrl: 'assets/images/google-icon.png',
                 jobTitle: 'Front-End Developer',
                 companyName: 'Google',
+                onTap: () {},
               ),
             ),
             Padding(
@@ -118,6 +207,7 @@ class HomeScreen extends StatelessWidget {
                 imageUrl: 'assets/images/instagram-icon.png',
                 jobTitle: 'UI Designer',
                 companyName: 'Instagram',
+                onTap: () {},
               ),
             ),
             Padding(
@@ -126,6 +216,7 @@ class HomeScreen extends StatelessWidget {
                 imageUrl: 'assets/images/facebook-icon.png',
                 jobTitle: 'Data Scientist',
                 companyName: 'Facebook',
+                onTap: () {},
               ),
             ),
             Padding(
@@ -134,6 +225,9 @@ class HomeScreen extends StatelessWidget {
                 imageUrl: 'assets/images/google-icon.png',
                 jobTitle: 'Data Scientist',
                 companyName: 'Facebook',
+                onTap: () {
+                  // Tindakan saat CustomList di-tap
+                },
               ),
             ),
           ],

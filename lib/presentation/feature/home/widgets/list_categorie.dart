@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:pegadaian_training_job_portal/presentation/feature/detail/detail_screen.dart';
 import 'package:pegadaian_training_job_portal/theme.dart';
 
-class CustomList extends StatelessWidget {
+class CategorieList extends StatelessWidget {
   final String jobTitle;
   final String imageUrl;
   final String companyName;
-  final VoidCallback onTap;
 
-  CustomList({
-    required this.jobTitle,
-    required this.imageUrl,
-    required this.companyName,
-    required this.onTap,
-  });
+  CategorieList(
+      {required this.jobTitle,
+      required this.imageUrl,
+      required this.companyName});
 
   @override
   Widget build(BuildContext context) {
