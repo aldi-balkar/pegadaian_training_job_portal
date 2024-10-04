@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart'; // Impor Google Fonts untuk cus
 import 'package:pegadaian_training_job_portal/theme.dart'; // Impor custom theme untuk styling text dan widget
 
 class DetailPage extends StatefulWidget {
+  const DetailPage({super.key});
+
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -17,7 +19,7 @@ class _DetailPageState extends State<DetailPage> {
           top: 51.0,
           left: 80,
         ),
-        child: Container(
+        child: SizedBox(
           width: 200,
           height: 45,
           child: TextButton(
@@ -27,7 +29,7 @@ class _DetailPageState extends State<DetailPage> {
                   66,
                 ),
               ),
-              backgroundColor: Color(0xff4141A4),
+              backgroundColor: const Color(0xff4141A4),
             ),
             onPressed: () {
               setState(() {
@@ -49,7 +51,7 @@ class _DetailPageState extends State<DetailPage> {
           top: 51.0,
           left: 80,
         ),
-        child: Container(
+        child: SizedBox(
           width: 200,
           height: 45,
           child: TextButton(
@@ -59,7 +61,7 @@ class _DetailPageState extends State<DetailPage> {
                   66,
                 ),
               ),
-              backgroundColor: Color(0xffFD4F56),
+              backgroundColor: const Color(0xffFD4F56),
             ),
             onPressed: () {
               setState(() {
@@ -77,16 +79,16 @@ class _DetailPageState extends State<DetailPage> {
 
     Widget successAppliedMessages() {
       return Container(
-        padding: EdgeInsets.fromLTRB(50, 5, 50, 5),
-        margin: EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 5),
+        margin: const EdgeInsets.only(bottom: 20),
+        decoration: const BoxDecoration(
             color: Color(0xffECEDF1),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Text(
           'You have applied this job and the \nrecruiter will contact you',
           textAlign: TextAlign.center,
           style: GoogleFonts.poppins(
-            color: Color(0xffA2A6B4),
+            color: const Color(0xffA2A6B4),
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),
@@ -99,16 +101,16 @@ class _DetailPageState extends State<DetailPage> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
-              isApplied ? successAppliedMessages() : SizedBox(),
+              isApplied ? successAppliedMessages() : const SizedBox(),
               Image.asset(
-                'assets/google-icon.png',
+                'assets/images/google-icon.png',
                 width: 60,
                 height: 60,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Front-End Developer',
                 style: jobApplyTextStyle,
@@ -117,7 +119,7 @@ class _DetailPageState extends State<DetailPage> {
                 'Google, Inc • Jakarta',
                 style: companyTextStyle,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0),
                 child: Column(
@@ -127,33 +129,33 @@ class _DetailPageState extends State<DetailPage> {
                       'About the job',
                       style: titleRequirements,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
                             Image.asset(
-                              'assets/dot.png',
+                              'assets/images/dot.png',
                               width: 12,
                               height: 12,
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Text(
                               'Full-Time On Site',
                               style: requirementsTextStyle,
                             ),
                           ],
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Row(
                           children: [
                             Image.asset(
-                              'assets/dot.png',
+                              'assets/images/dot.png',
                               width: 12,
                               height: 12,
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Text(
                               'Start at \$18,000 per month',
                               style: requirementsTextStyle,
@@ -162,7 +164,7 @@ class _DetailPageState extends State<DetailPage> {
                         )
                       ],
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -170,48 +172,48 @@ class _DetailPageState extends State<DetailPage> {
                           'Qualifications',
                           style: titleRequirements,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
                                 Image.asset(
-                                  'assets/dot.png',
+                                  'assets/images/dot.png',
                                   width: 12,
                                   height: 12,
                                 ),
-                                SizedBox(width: 8),
+                                const SizedBox(width: 8),
                                 Text(
                                   "Candidate must possess at least a \nBachelor's Degree.",
                                   style: requirementsTextStyle,
                                 ),
                               ],
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Row(
                               children: [
                                 Image.asset(
-                                  'assets/dot.png',
+                                  'assets/images/dot.png',
                                   width: 12,
                                   height: 12,
                                 ),
-                                SizedBox(width: 8),
+                                const SizedBox(width: 8),
                                 Text(
                                   "Able to use Microsoft Office and Google \nbased service.",
                                   style: requirementsTextStyle,
                                 ),
                               ],
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Row(
                               children: [
                                 Image.asset(
-                                  'assets/dot.png',
+                                  'assets/images/dot.png',
                                   width: 12,
                                   height: 12,
                                 ),
-                                SizedBox(width: 8),
+                                const SizedBox(width: 8),
                                 Text(
                                   "Have an excellent time management, \ngood at organized and details",
                                   style: requirementsTextStyle,
@@ -220,7 +222,7 @@ class _DetailPageState extends State<DetailPage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -228,33 +230,33 @@ class _DetailPageState extends State<DetailPage> {
                               'Responsibilities',
                               style: titleRequirements,
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dot.png',
+                                      'assets/images/dot.png',
                                       width: 12,
                                       height: 12,
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Text(
                                       "Initiate and promote any programs, events, \ntraining, or activities.",
                                       style: requirementsTextStyle,
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 16),
+                                const SizedBox(height: 16),
                                 Row(
                                   children: [
                                     Image.asset(
-                                      'assets/dot.png',
+                                      'assets/images/dot.png',
                                       width: 12,
                                       height: 12,
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Text(
                                       "Assessing and anticipating needs and \ncollaborate with Division.",
                                       style: requirementsTextStyle,
@@ -276,7 +278,7 @@ class _DetailPageState extends State<DetailPage> {
                                     'Message Recruiter',
                                     style: messageButtonTextStyle,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                 ],
