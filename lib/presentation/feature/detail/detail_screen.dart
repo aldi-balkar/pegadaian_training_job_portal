@@ -11,55 +11,78 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   bool isApplied = false;
+
   @override
   Widget build(BuildContext context) {
-    Widget applyButton() {
+    Widget applyButton({bool showBackButton = false}) {
       return Padding(
-        padding: const EdgeInsets.only(
-          top: 51.0,
-          left: 80,
-        ),
-        child: SizedBox(
-          width: 200,
-          height: 45,
-          child: TextButton(
-            style: TextButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(
-                  66,
+        padding: const EdgeInsets.symmetric(horizontal: 70),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 200,
+                height: 45,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(66),
+                    ),
+                    backgroundColor:
+                        const Color(0xff4141A4), // Warna tombol Apply
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      isApplied = !isApplied;
+                    });
+                  },
+                  child: Text(
+                    'Apply for Job',
+                    style: buttonTextStyle,
+                  ),
                 ),
               ),
-              backgroundColor: const Color(0xff4141A4),
-            ),
-            onPressed: () {
-              setState(() {
-                isApplied = !isApplied;
-              });
-            },
-            child: Text(
-              'Apply for Job',
-              style: buttonTextStyle,
-            ),
+              const SizedBox(height: 16),
+              if (showBackButton)
+                SizedBox(
+                  width: 200,
+                  height: 45,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(66),
+                      ),
+                      backgroundColor: const Color.fromARGB(
+                          255, 68, 138, 255), // Warna tombol Back
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context); // Kembali ke halaman sebelumnya
+                    },
+                    child: Text(
+                      'Back',
+                      style: buttonTextStyle,
+                    ),
+                  ),
+                ),
+            ],
           ),
         ),
       );
     }
 
+    // Fungsi untuk tombol Cancel Apply
     Widget cancelButton() {
       return Padding(
-        padding: const EdgeInsets.only(
-          top: 51.0,
-          left: 80,
-        ),
+        padding: const EdgeInsets.only(top: 51.0, left: 80),
         child: SizedBox(
           width: 200,
           height: 45,
           child: TextButton(
             style: TextButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(
-                  66,
-                ),
+                borderRadius: BorderRadius.circular(66),
               ),
               backgroundColor: const Color(0xffFD4F56),
             ),
@@ -77,13 +100,15 @@ class _DetailPageState extends State<DetailPage> {
       );
     }
 
+    // Pesan sukses ketika sudah apply
     Widget successAppliedMessages() {
       return Container(
         padding: const EdgeInsets.fromLTRB(50, 5, 50, 5),
         margin: const EdgeInsets.only(bottom: 20),
         decoration: const BoxDecoration(
-            color: Color(0xffECEDF1),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+          color: Color(0xffECEDF1),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+        ),
         child: Text(
           'You have applied this job and the \nrecruiter will contact you',
           textAlign: TextAlign.center,
@@ -101,9 +126,7 @@ class _DetailPageState extends State<DetailPage> {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(
-                height: 80,
-              ),
+              const SizedBox(height: 80),
               isApplied ? successAppliedMessages() : const SizedBox(),
               Image.asset(
                 'assets/images/google-icon.png',
@@ -111,24 +134,15 @@ class _DetailPageState extends State<DetailPage> {
                 height: 60,
               ),
               const SizedBox(height: 20),
-              Text(
-                'Front-End Developer',
-                style: jobApplyTextStyle,
-              ),
-              Text(
-                'Google, Inc • Jakarta',
-                style: companyTextStyle,
-              ),
+              Text('Front-End Developer', style: jobApplyTextStyle),
+              Text('Google, Inc • Jakarta', style: companyTextStyle),
               const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'About the job',
-                      style: titleRequirements,
-                    ),
+                    Text('About the job', style: titleRequirements),
                     const SizedBox(height: 16),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,10 +155,8 @@ class _DetailPageState extends State<DetailPage> {
                               height: 12,
                             ),
                             const SizedBox(width: 8),
-                            Text(
-                              'Full-Time On Site',
-                              style: requirementsTextStyle,
-                            ),
+                            Text('Full-Time On Site',
+                                style: requirementsTextStyle),
                           ],
                         ),
                         const SizedBox(height: 16),
@@ -156,22 +168,17 @@ class _DetailPageState extends State<DetailPage> {
                               height: 12,
                             ),
                             const SizedBox(width: 8),
-                            Text(
-                              'Start at \$18,000 per month',
-                              style: requirementsTextStyle,
-                            ),
+                            Text('Start at \$18,000 per month',
+                                style: requirementsTextStyle),
                           ],
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(height: 30),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Qualifications',
-                          style: titleRequirements,
-                        ),
+                        Text('Qualifications', style: titleRequirements),
                         const SizedBox(height: 16),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -219,17 +226,14 @@ class _DetailPageState extends State<DetailPage> {
                                   style: requirementsTextStyle,
                                 ),
                               ],
-                            )
+                            ),
                           ],
                         ),
                         const SizedBox(height: 30),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Responsibilities',
-                              style: titleRequirements,
-                            ),
+                            Text('Responsibilities', style: titleRequirements),
                             const SizedBox(height: 16),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -265,32 +269,30 @@ class _DetailPageState extends State<DetailPage> {
                                 ),
                               ],
                             ),
-                            isApplied ? cancelButton() : applyButton(),
+                            isApplied
+                                ? cancelButton()
+                                : applyButton(
+                                    showBackButton:
+                                        true), // Menambahkan showBackButton di sini
                             Padding(
-                              padding: const EdgeInsets.only(
-                                left: 104.0,
-                                top: 20,
-                              ),
+                              padding:
+                                  const EdgeInsets.only(left: 104.0, top: 20),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    'Message Recruiter',
-                                    style: messageButtonTextStyle,
-                                  ),
-                                  const SizedBox(
-                                    height: 30,
-                                  ),
+                                  Text('Message Recruiter',
+                                      style: messageButtonTextStyle),
+                                  const SizedBox(height: 30),
                                 ],
                               ),
-                            )
+                            ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
