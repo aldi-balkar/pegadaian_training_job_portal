@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pegadaian_training_job_portal/presentation/feature/home/home_screen.dart';
 import 'package:pegadaian_training_job_portal/presentation/feature/login/bloc/login_bloc.dart';
 import 'package:pegadaian_training_job_portal/presentation/feature/login/login_screen.dart';
+import 'package:pegadaian_training_job_portal/presentation/feature/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Bloc Login',
         initialRoute: '/',
         routes: {
-          '/': (context) => const LoginScreen(),
+          '/': (context) => const SplashScreen(),
           '/home': (context) => HomeScreen(),
         },
       ),
