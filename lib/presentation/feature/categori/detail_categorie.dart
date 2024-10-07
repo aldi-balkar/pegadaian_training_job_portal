@@ -105,6 +105,10 @@ class DetailCategory extends StatelessWidget {
           imageUrl: 'assets/images/google-icon.png',
           jobTitle: 'Web Developer (QA)',
           companyName: 'Google Co.'),
+      Job(
+          imageUrl: 'assets/images/microsoft.png',
+          jobTitle: 'Web Developer (BA)',
+          companyName: 'Microsoft Co.'),
     ];
 
     // Pengkondisian berdasarkan jobTitle
